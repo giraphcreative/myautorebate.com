@@ -1,0 +1,235 @@
+
+$purple: #802e6e;
+$yellow: #fff200;
+
+@font-face {
+	font-family: 'Myriad Pro Regular';
+	src: url('myriad-pro-regular.eot');
+	src: local('☺'), 
+		url('myriad-pro-regular.woff') format('woff'), 
+		url('myriad-pro-regular.ttf') format('truetype'), 
+		url('myriad-pro-regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Myriad Pro Bold';
+	src: url('myriad-pro-bold.eot');
+	src: local('☺'), 
+		url('myriad-pro-bold.woff') format('woff'), 
+		url('myriad-pro-bold.ttf') format('truetype'), 
+		url('myriad-pro-bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Myriad Pro Italic';
+	src: url('myriad-pro-italic.eot');
+	src: local('☺'), 
+		url('myriad-pro-italic.woff') format('woff'), 
+		url('myriad-pro-italic.ttf') format('truetype'), 
+		url('myriad-pro-italic.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin myriad {
+	font-family: "Myriad Pro Regular";
+	font-weight: none;
+}
+
+@mixin myriad-bold {
+	font-family: "Myriad Pro Bold";
+	font-weight: none;
+}
+
+@mixin myriad-italic {
+	font-family: "Myriad Pro Italic";
+	font-weight: none;
+}
+
+@mixin rounded( $amount: 15px ) {
+	-webkit-border-radius: $amount;
+	-moz-border-radius: $amount;
+	border-radius: $amount;
+}
+
+body {
+	@include myriad;
+	background: #444 url(../img/bg.jpg) top center no-repeat;
+	background-size: cover;
+	font-size: 20px;
+	line-height: 25px;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 6px 0;
+}
+
+strong, th, h1, h2, h3, h4, h5, h6 {
+	@include myriad-bold;
+	font-weight: normal;
+}
+
+h1 {
+	color: $yellow;
+}
+
+img {
+	max-width: 100%;
+	border: 0;
+}
+
+#header {
+	position: relative;
+	z-index: 10;
+}
+
+#content {
+	background: url(../img/bg-content.png) repeat-x;
+	min-height: 600px;
+	position: relative;
+	z-index: 1;
+	margin-top: -25px;
+
+	#yellow-stripe {
+		background: url(../img/bg-yellow.png);
+		position: absolute;
+		left: 77px;
+		top: 0;
+		bottom: 0;
+		width: 258px;
+		padding: 40px 20px;
+		font-size: 24px;
+		line-height: 30px;
+
+		p {
+			color: #fff;
+		}
+	}
+
+	#calculator {
+		width: 370px;
+		padding: 20px;
+		position: absolute;
+		top: 28px;
+		right: 80px;
+		min-height: 300px;
+		background: #f3f3f5;
+		@include rounded( 20px );
+
+		.header {
+			border-bottom: 1px solid $purple;
+			padding-bottom: 10px;
+		}
+
+		p {
+			padding: 8px 20px;
+			color: #666;
+
+			input[type=text] {
+				border: 0;
+				background: #ccc;
+				@include rounded( 10px );
+				@include myriad;
+				font-size: 18px;
+				line-height: 20px;
+				padding: 8px 3%;
+				width: 94%;
+				letter-spacing: 1px;
+			}
+		}
+
+		#calculate {
+			margin: 0 auto;
+			cursor: pointer;
+		}
+	}
+
+	#results {
+		padding: 70px 150px;
+		text-align: center;
+		display: none;
+
+		h1, h2, h3 {
+			font-size: 34px;
+			line-height: 34px; 
+			padding: 3px 0;
+		}
+
+		h1 {
+			@include myriad;
+			font-size: 50px;
+			line-height: 50px;
+		}
+
+		h2 {
+			@include myriad-italic;
+			color: white;
+		}
+
+		h3 {
+			@include myriad;
+			color: $yellow;
+		}
+	}
+
+	#save-more-button {
+		@include rounded( 15px );
+		cursor: pointer;
+		box-shadow: 2px 2px 15px #000;
+		margin-top: 40px;
+	}
+}
+
+#footer {
+	background: $purple;
+	color: white;
+
+	h4 {
+		@include myriad;
+		font-size: 25px;
+		line-height: 25px;
+		padding: 10px 0 4px;
+	}
+
+	h2 {
+		font-size: 45px;
+		line-height: 45px;
+		padding: 0 0 10px;
+	}
+
+	.half {
+		text-align: center;
+	}
+}
+
+#subfooter {
+	padding: 10px 20px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+
+
+.wrapper {
+	width: 940px;
+	margin: 0 auto;
+}
+
+.half {
+	float: left;
+	width: 44%;
+	margin: 10px 3%;
+}
+
+.center {
+	text-align: center;
+}
+
+.clear {
+	clear: both;
+}
