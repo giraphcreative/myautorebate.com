@@ -8,7 +8,7 @@ function calculate(){
 	var balance=$("#balance").val(),
 		rate=$("#rate").val(),
 		term=$("#term").val();
-	$.post( "/calculate.php?balance="+balance+"&rate="+rate+"&term="+term, function(data){
+	$.post( "calculate.php?balance="+balance+"&rate="+rate+"&term="+term, function(data){
 		if ( data!=="Error" ) {
 			var loans=$.parseJSON( data );
 			console.log( loans );

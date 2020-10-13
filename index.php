@@ -1,12 +1,12 @@
 <?php
 
-
 /************************************
          DATABASE FUNCTIONS
  ************************************/
-require( config.php );
+// require( config.php );
 
 
+/*
 class db {
 	protected $cn='';
 	public $result='';
@@ -89,6 +89,7 @@ if ( isset( $subdomain ) ) {
 		$name=ucfirst(strtolower($get_name->fname));
 	}
 }
+*/
 
 ?><!doctype html>
 <html lang="en">
@@ -97,7 +98,7 @@ if ( isset( $subdomain ) ) {
 	<title>My Auto Rebate</title>
 	<meta name="description" content="My auto rebate.">
 	<meta name="author" content="FAA ECU">	
-	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="css/main.css">
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -105,12 +106,11 @@ if ( isset( $subdomain ) ) {
 <body>
 	<div id="container" class="wrapper">
 		<div id="header">
-			<a href="/"><img src="/img/header.png" /></a>
+			<a href="/"><img src="img/header.png" /></a>
 		</div>
 		<div id="content">
 			<div id="home">
 				<div id="yellow-stripe">
-					<?php print ( isset( $name ) ? "<p>Hey " . $name . "!</p>" : "" ); ?>
 					<p>Compare auto loans you
 					have at other financial
 					institutions to FAA Credit
@@ -121,28 +121,28 @@ if ( isset( $subdomain ) ) {
 					<p>Go on. Put us to the test.</p>
 				</div>
 				<div id="calculator">
-					<img src="/img/header-calculator.jpg" class="header" />
+					<img src="img/header-calculator.jpg" class="header" />
 					<p>Current Loan Balance:<br />
 						<input type="text" id="balance" value="5000" class="numbers-only" /></p>
 					<p>Remaining Term (in Months):<br />
 						<input type="text" id="term" value="48" class="numbers-only" /></p>
 					<p>Annual Percentage Rate (APR):<br />
 						<input type="text" id="rate" value="5.99" class="numbers-only" /></p>
-					<p class="center"><img src="/img/save-button.png" id="calculate" /></p>
+					<p class="center"><img src="img/save-button.png" id="calculate" /></p>
 				</div>
 			</div>
 			<div id="results">
-				<h1>Congratulations<?php print ( isset( $name ) ? ", " . $name : "" ); ?>!</h1>
+				<h1>Congratulations!</h1>
 				<h2>You can save as much as $<span id="total"></span>!</h2>
 				<h3>$<span id="savings"></span> in interest, $<span id="rebate"></span> cash rebate</h3>
-				<a href="http://www.faaecu.org/contact/contact-me-form"><img src="/img/bg-result-button.png" id="save-more-button" /></a>
+				<a href="http://www.faaecu.org/contact/contact-me-form"><img src="img/bg-result-button.png" id="save-more-button" /></a>
 			</div>
 		</div>
 	</div>
 	<div id="footer">
 		<div class="wrapper">
 			<div class="half">
-				<a href="http://www.faaecu.org/"><img src="/img/logo-footer.png" /></a>
+				<a href="http://www.faaecu.org/"><img src="img/logo-footer.png" /></a>
 			</div>
 			<div class="half">
 				<h4>Lower your payments today!</h4>
@@ -166,7 +166,7 @@ if ( isset( $subdomain ) ) {
 			and actual amount may vary.</p>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="/js/main.js"></script>
+	<script src="js/main.js"></script>
 	<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
